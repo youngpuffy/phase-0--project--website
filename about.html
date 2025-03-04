@@ -27,11 +27,51 @@
                     <img src="images/user.png" alt="ME">
                 </div>
                 <div class="about-col-2">
-                    <h1>About Me</h1>
+                    <h1 class="sub-title">About Me</h1>
                     <p>i was born in the 20th century in muranga county, kandara subcounty at a hosipital called githumu hosipital.I grew up in nyeri county where i did my pre-school and later shifted to githurai 45 kiambu county. I joined  Juter primary, where i learned until class six and transferred to boarding school in mwea.That's where i came acroos my first computer</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links"onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li>designing Web/App interfaces</li>
+                            <li> Web Development</li>
+                            <li>Building Android/ios apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2019 - 2020 </span><br>data entry at nazarene hosipital</li>
+                            <li><span>2021 -2022</span><br>attachment at kirdi</li>
+                            <li><span>2022 - 2023</span><br> internship at safaricom</li>
+                        </ul>
+                    </div>
+                     <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2025 - current</span><br>software engineering at moringa school</li>
+                            <li><span>2019 - 2023 </span><br>diploma from technical university of kenya </li>
+                        </ul>
+                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        var tablinks =document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 </body>
 </html>
